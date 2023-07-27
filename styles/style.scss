@@ -1,0 +1,406 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+$dark: #292929;
+$border: 1px solid #737373 !important;
+$purple: #a87ff3;
+
+$red-orangde: linear-gradient(90deg, #fa709a 0%, #fee140 100%);
+
+$anton: 'Anton', sans-serif;
+$poppins: 'Poppins', sans-serif;
+
+
+
+*:not(.landing-h2)::selection{
+    background: $purple;
+    color: #fff;
+}
+
+
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #9dbac3;
+    border-radius: 4px;
+}
+  
+::-webkit-scrollbar-track:hover {
+background-color: #292929;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+background-color: $purple;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-resizer {
+    background-color: #000;
+}
+
+// Custom scrollbar End
+
+
+
+
+body{
+    background: #000 !important;
+    scroll-behavior: smooth;
+}
+
+
+.up-button{
+    color: $purple;
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    transition: opacity 0.3s;
+    z-index: 999;
+    text-decoration: none;
+    font-size: 2.8rem;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    user-select: auto;
+    pointer-events: all;
+
+    &.btn-hidden{
+        opacity: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+section{
+    margin-block: 120px;
+
+    &:last-child{
+        margin-bottom: 200px;
+    }
+    
+    &:not(.info){   
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    height: auto;
+
+    h2{
+        font-family: $anton !important;
+        text-transform: uppercase !important;
+    }
+}
+
+.container{
+    max-width: 1700px;
+    padding-inline: 2rem;
+}
+
+.border-card{
+    background: #000;
+    border: $border;
+}
+
+
+.custom-card{
+    img{
+        object-fit: cover;
+        aspect-ratio: 1 / 0.7;
+    }
+
+    small{
+        padding: 0.1rem 0.3rem;
+        background: #e9dffc;
+        color: #784dc7;
+    }
+
+    a{
+        background: $dark !important;
+    }
+}
+
+header{
+    font-family: $poppins;
+
+    .btn{
+        background: $purple;
+        color: #fff;
+
+        &:hover{
+            background: #784dc7;
+        }
+    }
+
+    img{
+        width: 2rem;
+    }
+
+    li{
+        font-weight: 600;
+    }
+}
+
+
+@media (width <= 991px) {
+    header{
+        .btn{
+            width: 100%;
+        }
+    }
+
+    .landing-page{
+        min-height: auto !important;
+    }
+}
+
+
+.landing-page{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .right svg{
+        max-width: 10rem;
+        width: 10vw;
+    }
+
+    h1{
+        font-family: $anton;
+        font-size: clamp(4rem, 12vw, 12.5rem);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -3px;
+        width: min-content;
+    }
+
+    h2{
+        font-family: $anton;
+        font-size: clamp(3rem, 9vw, 7.2rem);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -2px;
+        background: $red-orangde;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .icons{
+        margin-top: 5rem;
+    }
+
+    .landing-icon{
+        width: 3.4rem;
+        aspect-ratio: 1;
+        padding: 0.4rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: background 0.2s;
+
+        &:hover{
+            background: rgb(47, 47, 57);
+        }
+    }
+}
+
+
+@media (width <= 600px) {
+    .landing-page{
+        .landing-icon{
+            width: 3rem;
+            padding: 0.2rem;
+        }
+    }
+}
+
+.info{
+    color: #c8fec7;
+
+    h2{
+        font-size: clamp(4rem, 8vw, 8rem);
+    }
+
+    font-family: $anton;
+
+    p{
+        font-size: clamp(1.8rem, 3vw, 3.2rem);
+    }
+}
+
+
+.portfolio{
+    .container{
+        font-family: $poppins;
+    }
+}
+
+
+.skills{
+    font-family: $poppins;
+
+    h4{
+        font-size: 2.2rem;
+    }
+
+    text{
+        font-weight: 800;
+    }
+
+    svg{
+        width: 220px;
+        aspect-ratio: 1;
+        overflow-clip-margin: content-box;
+    }
+}
+
+
+
+.gradient{
+    // background-image: url("images/ab25e878d69438525a270f7728cb581a.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-family: $poppins;
+
+    p{
+        font-weight: bold;
+        font-style: italic;
+        line-height: 110%;
+    }
+
+    svg{
+        width: 6rem;
+    }
+}
+
+
+.about_me{
+    img{
+        filter: grayscale(1);
+        object-fit: cover;
+        height: 100%;
+    }
+
+    p{
+        font-weight: 800;
+        font-family: $poppins;
+        line-height: 120%;
+
+        font-size: clamp(1.5rem, 2vw, 2.4rem);
+
+    }
+
+    .row{
+        .gradient-text{
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        &:first-child{
+            .gradient-text{
+                background-image: linear-gradient(to right, #fb838b, #fdb365);
+            }
+        }
+
+        &:nth-child(2){
+            .gradient-text{
+                background-image: linear-gradient(to right, #8cdae6, #87f0c2);
+            }
+        }
+
+        &:last-child{
+            .gradient-text{
+                background-image: linear-gradient(to right, #bac4fc, #d1c4fc);
+            }
+        }
+    }
+}
+
+
+
+
+footer{
+    position: relative;
+    background: $dark;
+    font-family: $poppins;
+
+    padding-top: 4.5rem;
+
+    .footer{
+        img{
+            width: 4.2rem;
+        }
+
+        p{
+            font-weight: 800;
+        }
+    }
+
+    .cont{
+        position: absolute;
+        width: 96%;
+
+        top: 0%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    .purple{
+        position: relative;
+        background: $purple;
+
+        p{
+            padding-left: 20%;
+        }
+
+        img{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: clamp(10rem, 16%, 16rem);
+        }
+    }
+}
+
+
+@media (width <= 991px){
+    footer{
+        .purple{  
+            p{
+                padding-left: 0%;
+            }
+        }
+    }
+}
+
+@media (width <= 500px){
+    footer{
+        a{
+            display: block;
+            width: 50%;
+        }
+    }
+}
