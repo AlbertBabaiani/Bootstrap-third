@@ -24,3 +24,25 @@ window.addEventListener('scroll', toggleUpVisibility);
 
 
 // Arrow Up End
+
+const portfolio = document.querySelector('.portfolio');
+const images_temp = [...portfolio.querySelectorAll('.wow')];
+const [temp, ...images] = images_temp;
+
+function delay(){
+  if(window.innerWidth <= 767){
+    images.forEach((el, index) =>{
+      el.dataset.wowDelay = '0s'
+    })
+  }
+
+  else{
+
+    images.forEach((el, index) =>{
+      el.dataset.wowDelay = `${0.1 * index}s`
+    })
+  }
+}
+
+delay()
+window.addEventListener('resize', delay)
