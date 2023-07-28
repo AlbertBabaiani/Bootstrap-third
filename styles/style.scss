@@ -54,10 +54,42 @@ background-color: $purple;
 
 
 
+.screen-loader{
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(16px);
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader{
+        width: 4rem;
+        aspect-ratio: 1;
+        border-radius: 100vmax;
+
+        // background: red;
+        border: 0.5rem solid transparent;
+
+        border-top-color: $purple;
+
+        animation: spinning 1s linear 0s infinite;
+    }
+}
+
+@keyframes spinning {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
 
 body{
     background: #000 !important;
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 

@@ -40,9 +40,34 @@
   background-color: #000;
 }
 
+.screen-loader {
+  position: fixed;
+  inset: 0;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.screen-loader .loader {
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 100vmax;
+  border: 0.5rem solid transparent;
+  border-top-color: #a87ff3;
+  animation: spinning 1s linear 0s infinite;
+}
+
+@keyframes spinning {
+  to {
+    transform: rotate(360deg);
+  }
+}
 body {
   background: #000 !important;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 .up-button {
