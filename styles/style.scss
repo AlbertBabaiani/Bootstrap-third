@@ -89,7 +89,7 @@ background-color: $purple;
 body{
     background: #000 !important;
     scroll-behavior: smooth;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 
@@ -171,7 +171,8 @@ header{
         background: $purple;
         color: #fff;
 
-        &:hover{
+        &:hover,
+        &:focus{
             background: #784dc7;
         }
     }

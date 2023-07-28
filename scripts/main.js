@@ -52,5 +52,5 @@ const loader = document.querySelector('.screen-loader');
 
 window.onload = function(){
   loader.style.display = 'none'
-  document.body.style.overflow = 'scroll'
+  document.body.style.overflowY = 'scroll'
 }

@@ -67,7 +67,7 @@
 body {
   background: #000 !important;
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .up-button {
@@ -139,7 +139,7 @@ header .btn {
   background: #a87ff3;
   color: #fff;
 }
-header .btn:hover {
+header .btn:hover, header .btn:focus {
   background: #784dc7;
 }
 header img {
